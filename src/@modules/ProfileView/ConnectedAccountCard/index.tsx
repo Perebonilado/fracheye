@@ -45,7 +45,7 @@ const ConnectedAccountCard: FC<Props> = ({
         {Object.entries(stats).map(([title, count], key) => {
           return (
             <div className="flex flex-col gap-2 text-center" key={key}>
-              <p className="text-sm text-[#00000066]">{formatNumberToShortForm(count)}</p>
+              <p className="text-sm text-[#000] font-bold">{formatNumberToShortForm(count)}</p>
               <p className="text-[10px] text-[#000000B2]">{title}</p>
             </div>
           );
