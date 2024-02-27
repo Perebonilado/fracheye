@@ -12,7 +12,7 @@ const ProfileView: FC = () => {
   return (
     <Container>
       <section className="flex gap-8 my-32 max-md:flex-col">
-        <main className="md:w-[60%] border border-blue-600 min-h-full">
+        <main className="md:w-[60%]">
           <UserInfoContainer {...data} />
           <ConnectedAccountsContainer />
           <PreviousWorksContainer />

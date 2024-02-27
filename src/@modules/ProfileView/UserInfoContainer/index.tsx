@@ -35,7 +35,7 @@ const UserInfoContainer: FC<Props> = ({
   };
 
   return (
-    <section className="flex mb-10 max-md:flex-col">
+    <section className="flex mb-10 max-md:flex-col gap-4">
       <div style={{ flex: 4 }} className="flex flex-col">
         <div className="flex items-center gap-2">
           <h2 className="text-2xl font-bold">{name}</h2>
