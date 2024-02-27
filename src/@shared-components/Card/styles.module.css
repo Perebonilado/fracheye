@@ -15,5 +15,5 @@
 }
 
 .large {
-  @apply py-6 px-8;
+  @apply py-5 px-6;
 }
