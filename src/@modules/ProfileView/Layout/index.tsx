@@ -7,12 +7,18 @@ import PreviousWorksContainer from "../PreviousWorksContainer";
 import ConnectedAccountsContainer from "../ConnectedAccountsContainer";
 import UserInfoContainer from "../UserInfoContainer";
 import data from "../../../json-data/user2.json";
+import Banner from "../Banner";
 
 const ProfileView: FC = () => {
   return (
     <Container>
       <section className="flex gap-8 my-32 max-md:flex-col">
         <main className="md:w-[60%]">
+          <Banner
+            bannerImage="/assets/banner-bg.png"
+            username={data.username}
+            profilePic="/assets/user-profile-pic.png"
+          />
           <UserInfoContainer {...data} />
           <ConnectedAccountsContainer />
           <PreviousWorksContainer />

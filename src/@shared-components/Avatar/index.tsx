@@ -1,8 +1,8 @@
-import React, { forwardRef } from "react";
+import React, { HTMLAttributes, forwardRef } from "react";
 import c from "classnames";
 import s from "./styles.module.css";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   size?: "small" | "medium" | "large";
   imageUrl?: string;
   fallBack: string;
@@ -20,6 +20,7 @@ const Avatar = forwardRef<HTMLDivElement, Props>(
       shape = "round",
       alt,
       allowEnlarge = true,
+      ...props
     },
     ref
   ) => {
@@ -29,9 +30,9 @@ const Avatar = forwardRef<HTMLDivElement, Props>(
       [s.large]: size === "large",
       [s.round]: shape === "round",
       [s.square]: shape === "square",
-    });
+    }, props.className);
     return (
-      <div ref={ref} role="img" className={rootClassName}>
+      <div {...props} ref={ref} role="img" className={rootClassName} >
         {imageUrl ? (
           <img
             className="absolute top-0 left-0 w-full h-full"
