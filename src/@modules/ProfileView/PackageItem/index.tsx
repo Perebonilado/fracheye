@@ -4,21 +4,21 @@ import VerifiedBadgeAlt from "../../../@icons/VerifiedBadgeAlt";
 interface Props {
   title: string;
   price: string;
-  currency: string;
+  currency?: string;
   availablePackages: string[];
 }
 
 const PackageItem: FC<Props> = ({
   title,
   price,
-  currency,
+  currency = "USD",
   availablePackages,
 }) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-bold text-base text-[#000000]">{title}</h3>
-        <p className="text-sm text-[#000000CC]">
+        <p className="text-sm text-[#000000CC] font-semibold">
           {currency} {price}
         </p>
       </div>
