@@ -6,6 +6,7 @@ interface Props {
   size?: "small" | "medium" | "large";
   imageUrl?: string;
   fallBack: string;
+  alt: string;
   shape?: "round" | "square";
   allowEnlarge?: boolean;
 }
@@ -17,6 +18,7 @@ const Avatar = forwardRef<HTMLDivElement, Props>(
       imageUrl,
       fallBack,
       shape = "round",
+      alt,
       allowEnlarge = true,
     },
     ref
@@ -39,6 +41,7 @@ const Avatar = forwardRef<HTMLDivElement, Props>(
               cursor: allowEnlarge ? "pointer" : "auto",
             }}
             src={imageUrl}
+            alt={alt}
           />
         ) : (
           <p
