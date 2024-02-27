@@ -6,7 +6,7 @@ import GuaranteeCard from "../GuaranteeCard";
 import PreviousWorksContainer from "../PreviousWorksContainer";
 import ConnectedAccountsContainer from "../ConnectedAccountsContainer";
 import UserInfoContainer from "../UserInfoContainer";
-import data from "../../../json-data/user2.json";
+import data from "../../../json-data/user1.json";
 import Banner from "../Banner";
 import { UserInfoModel } from "../../../models/UserInfoModel.model";
 

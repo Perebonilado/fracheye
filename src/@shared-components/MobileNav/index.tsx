@@ -26,7 +26,7 @@ const MobileNav: FC<Props> = ({ handleClose }) => {
   return (
     <div
       ref={ref}
-      className="shadow-lg rounded-xl bg-white w-full max-w-[300px] p-6 absolute top-[100%] right-1"
+      className="shadow-lg rounded-xl bg-white w-full max-w-[300px] p-6 z-[1000] absolute top-[100%] right-1"
     >
       <div className="flex flex-col items-center gap-6">
         <Avatar alt="user avatar" size="small" fallBack="u" />
