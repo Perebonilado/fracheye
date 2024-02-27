@@ -5,6 +5,7 @@ import Button from "../Button";
 interface Props extends HTMLAttributes<HTMLDivElement | HTMLButtonElement> {
   title: string;
   isActive: boolean;
+  headerKey: string;
   handleClick: (title: string) => void;
   variant?: "button" | "text";
 }
@@ -13,6 +14,7 @@ const TabItem: FC<Props> = ({
   title,
   isActive,
   handleClick,
+  headerKey,
   variant = "text",
   ...props
 }) => {
@@ -34,7 +36,7 @@ const TabItem: FC<Props> = ({
         <div
           {...props}
           onClick={() => {
-            handleClick(title);
+            handleClick(headerKey);
           }}
         >
           <div className="cursor-pointer px-5">
@@ -57,7 +59,7 @@ const TabItem: FC<Props> = ({
           color={isActive ? "primary" : "secondary"}
           className="!rounded-none first:!rounded-tl-lg first:!rounded-bl-lg last:!rounded-tr-lg last:!rounded-br-lg font-medium"
           onClick={() => {
-            handleClick(title);
+            handleClick(headerKey);
           }}
         />
       )}

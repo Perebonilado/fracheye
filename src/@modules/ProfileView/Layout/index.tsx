@@ -24,7 +24,17 @@ const ProfileView: FC = () => {
           <PreviousWorksContainer />
         </main>
         <aside className="md:w-[40%] px-4">
-          <PackageContainer />
+          <PackageContainer
+            packages={data.packages.map((pkg) => {
+              return {
+                availablePackages: pkg.services,
+                price: pkg.price,
+                title: pkg.title,
+                packageType: pkg.packageType,
+                contentType: pkg.contentType,
+              };
+            })}
+          />
           <Button
             title="Contact Emmanuel"
             fullWidth

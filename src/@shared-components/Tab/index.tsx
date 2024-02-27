@@ -2,7 +2,7 @@ import React, { forwardRef, useState, useEffect } from "react";
 import TabItem from "../TabItem";
 
 interface Props {
-  headers: { isActive: boolean; title: string }[];
+  headers: { isActive: boolean; title: string, key: string }[];
   handleGetActiveTabTitle?: (title: string) => void;
   currentActiveTabOnMount?: string;
   variant?: "text" | "button";
@@ -22,11 +22,11 @@ const Tab = forwardRef<HTMLDivElement, Props>(
   ) => {
     const [headersCopy, setHeadersCopy] = useState([...headers]);
 
-    const handleChangeActiveHeader = (title: string) => {
+    const handleChangeActiveHeader = (key: string) => {
       setHeadersCopy(() =>
         headersCopy.map((header) => {
-          if (header.title === title) {
-            if (handleGetActiveTabTitle) handleGetActiveTabTitle(title);
+          if (header.key === key) {
+            if (handleGetActiveTabTitle) handleGetActiveTabTitle(key);
             return { ...header, isActive: true };
           }
           return { ...header, isActive: false };
@@ -46,6 +46,7 @@ const Tab = forwardRef<HTMLDivElement, Props>(
           return (
             <TabItem
               {...header}
+              headerKey={header.key}
               key={key}
               handleClick={handleChangeActiveHeader}
               variant={variant}

@@ -11,7 +11,7 @@ const PreviousWorksContainer: FC = () => {
       <h2 className="text-xl font-bold mb-10 max-[1240px]:text-center">Previous Works</h2>
       <div className="grid grid-cols-3 gap-5 max-[1240px]:grid-cols-2 max-lg:grid-cols-1 justify-items-center">
         {data &&
-          data.map((pw) => {
+          data.map((pw, key) => {
             return (
               <Avatar
                 imageUrl={pw.imageSrc}
@@ -19,6 +19,7 @@ const PreviousWorksContainer: FC = () => {
                 size="large"
                 alt={pw.description}
                 fallBack="W"
+                key={key}
               />
             );
           })}

@@ -3,7 +3,7 @@ import VerifiedBadgeAlt from "../../../@icons/VerifiedBadgeAlt";
 
 interface Props {
   title: string;
-  price: string;
+  price: number;
   currency?: string;
   availablePackages: string[];
 }
