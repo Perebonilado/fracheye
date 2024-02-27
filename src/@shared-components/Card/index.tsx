@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Card = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  ({ children, color = "white", size = "small", ...props }) => {
+  ({ children, color = "white", size = "small", ...props }, ref) => {
     const rootClassNames = cn(
       `${s.root}`,
       {
@@ -20,7 +20,11 @@ const Card = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
       props.className
     );
 
-    return <div className={rootClassNames}>{children}</div>;
+    return (
+      <div ref={ref} className={rootClassNames}>
+        {children}
+      </div>
+    );
   }
 );
 
