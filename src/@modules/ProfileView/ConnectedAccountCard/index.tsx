@@ -3,6 +3,7 @@ import Card from "../../../@shared-components/Card";
 import { SocialMediaPlatformModel } from "../../../models/SocialMediaPlatform.model";
 import InstagramIcon from "../../../@icons/InstagramIcon";
 import ArrowRight from "../../../@icons/ArrowRight";
+import { formatNumberToShortForm } from "../../../utils";
 
 interface Props {
   totalLifeTimeViewsCount: number;
@@ -33,7 +34,7 @@ const ConnectedAccountCard: FC<Props> = ({
 
   return (
     <Card>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-4">
         {socialMediaPlatformIcons[socialMediaPlatform]}
 
         <p className="text-base font-medium">{username}</p>
@@ -41,12 +42,12 @@ const ConnectedAccountCard: FC<Props> = ({
         <ArrowRight />
       </div>
 
-      <div>
-        {Object.entries(stats).map(([title, count]) => {
+      <div className="flex gap-2 justify-between">
+        {Object.entries(stats).map(([title, count], key) => {
           return (
-            <div className="flex flex-col gap-4 text-center">
-              <p className="text-sm text-[#000000B2]">{title}</p>
-              <p className="text-xs text-[#00000066]">{count}</p>
+            <div className="flex flex-col gap-2 text-center" key={key}>
+              <p className="text-sm text-[#00000066]">{formatNumberToShortForm(count)}</p>
+              <p className="text-[10px] text-[#000000B2]">{title}</p>
             </div>
           );
         })}

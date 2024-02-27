@@ -10,3 +10,23 @@ export const formatCamelCaseToIndividualWords = (camelCaseWord?: string) => {
   }
   return "";
 };
+
+export const formatNumberToShortForm = (num: number) => {
+  let formattedNum;
+
+  switch (true) {
+    case num >= 1000000000:
+      formattedNum = (num / 1000000000).toFixed(0) + "B";
+      break;
+    case num >= 1000000:
+      formattedNum = (num / 1000000).toFixed(0) + "M";
+      break;
+    case num >= 1000:
+      formattedNum = (num / 1000).toFixed(0) + "K";
+      break;
+    default:
+      formattedNum = num.toString();
+  }
+
+  return formattedNum;
+};
