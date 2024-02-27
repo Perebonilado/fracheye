@@ -23,7 +23,7 @@
 }
 
 .small {
-  @apply text-sm px-2 py-1;
+  @apply text-sm px-8 py-3;
 }
 
 .medium {
@@ -32,4 +32,8 @@
 
 .large {
   @apply text-sm px-8 py-3;
+}
+
+.text.large {
+  @apply text-lg
 }

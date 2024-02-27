@@ -1,5 +1,5 @@
 .root {
-  @apply relative  overflow-hidden flex items-center justify-center bg-slate-300;
+  @apply relative  overflow-hidden flex items-center justify-center;
 }
 
 .small {
@@ -7,7 +7,7 @@
 }
 
 .medium {
-  @apply w-20 h-20;
+  @apply w-24 h-24;
 }
 
 .large {
