@@ -20,7 +20,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
 
           <div className="flex items-center gap-6 max-sm:hidden">
             <Button title="Share Profile" color="tetiary" size="small" />
-            <Avatar alt="logged in user image" fallBack="U" size="small" />
+            <Avatar alt="logged in user image" fallBack="U" size="small" imageUrl="/assets/nav-profile.png"/>
           </div>
 
           <Hamburger onClick={() => setIsMobileNav(!isMobileNav)} />

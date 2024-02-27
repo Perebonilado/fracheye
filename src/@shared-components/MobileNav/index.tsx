@@ -29,7 +29,7 @@ const MobileNav: FC<Props> = ({ handleClose }) => {
       className="shadow-lg rounded-xl bg-white w-full max-w-[300px] p-6 z-[1000] absolute top-[100%] right-1"
     >
       <div className="flex flex-col items-center gap-6">
-        <Avatar alt="user avatar" size="small" fallBack="u" />
+        <Avatar alt="user avatar" size="small" fallBack="u" imageUrl="/assets/nav-profile.png"/>
         <div className="w-full h-[1px] bg-slate-300"></div>
         <Button
           title="Share Profile"
