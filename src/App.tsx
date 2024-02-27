@@ -7,12 +7,13 @@ import Tab from "./@shared-components/Tab";
 import Card from "./@shared-components/Card";
 import Logo from "./@shared-components/Logo";
 import Navbar from "./@shared-components/Navbar";
+import ProfileView from "./@modules/ProfileView/Layout";
 
 function App() {
   return (
     <>
       <Navbar />
-      
+      <ProfileView />
     </>
   );
 }

@@ -7,6 +7,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   size?: "large" | "medium" | "small";
   color?: "primary" | "secondary" | "tetiary";
   title: string;
+  fullWidth?: boolean;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
 }
@@ -17,6 +18,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
       variant = "contained",
       size = "medium",
       color = "primary",
+      fullWidth = false,
       title,
       startIcon = null,
       endIcon = null,
@@ -35,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
         [s.large]: size === "large",
         [s.medium]: size === "medium",
         [s.small]: size === "small",
+        "w-full": fullWidth,
       },
       `${props.className}`
     );

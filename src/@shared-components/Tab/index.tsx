@@ -41,7 +41,7 @@ const Tab = forwardRef<HTMLDivElement, Props>(
     }, []);
 
     return (
-      <div ref={ref} className="p-6 flex items-center">
+      <div ref={ref} className="flex items-center">
         {headersCopy.map((header, key) => {
           return (
             <TabItem

@@ -16,7 +16,7 @@ const TabItem: FC<Props> = ({
   variant = "text",
   ...props
 }) => {
-  const textTabTitleClass = cn(`text-lg text-center font-medium`, {
+  const textTabTitleClass = cn(`text-base text-center font-medium`, {
     ["text-[#0000004D]"]: !isActive,
     ["text-[#000000]"]: isActive,
   });
