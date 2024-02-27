@@ -5,12 +5,15 @@ import Button from "../../../@shared-components/Button";
 import GuaranteeCard from "../GuaranteeCard";
 import PreviousWorksContainer from "../PreviousWorksContainer";
 import ConnectedAccountsContainer from "../ConnectedAccountsContainer";
+import UserInfoContainer from "../UserInfoContainer";
+import data from "../../../json-data/user2.json";
 
 const ProfileView: FC = () => {
   return (
     <Container>
       <section className="flex gap-8 my-32 max-md:flex-col">
         <main className="md:w-[60%] border border-blue-600 min-h-full">
+          <UserInfoContainer {...data} />
           <ConnectedAccountsContainer />
           <PreviousWorksContainer />
         </main>
