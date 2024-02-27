@@ -4,6 +4,7 @@ import "./App.css";
 import Container from "./@shared-components/Container";
 import Button from "./@shared-components/Button";
 import Avatar from "./@shared-components/Avatar";
+import Tab from "./@shared-components/Tab";
 
 function App() {
   return (
@@ -23,6 +24,12 @@ function App() {
         imageUrl="https://via.placeholder.com/150/92c952"
         size="large"
         shape="square"
+      />
+      <Tab
+        headers={[
+          { title: "Videos", isActive: false },
+          { title: "Photos", isActive: true },
+        ]}
       />
     </Container>
   );
