@@ -1,13 +1,14 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import TabItem from "../TabItem";
 
 interface Props {
   headers: { isActive: boolean; title: string }[];
   handleGetActiveTabTitle?: (title: string) => void;
+  currentActiveTabOnMount?: string;
 }
 
 const Tab = forwardRef<HTMLDivElement, Props>(
-  ({ headers, handleGetActiveTabTitle }, ref) => {
+  ({ headers, handleGetActiveTabTitle, currentActiveTabOnMount }, ref) => {
     const [headersCopy, setHeadersCopy] = useState([...headers]);
 
     const handleChangeActiveHeader = (title: string) => {
@@ -21,6 +22,12 @@ const Tab = forwardRef<HTMLDivElement, Props>(
         })
       );
     };
+
+    useEffect(() => {
+      if (currentActiveTabOnMount) {
+        handleChangeActiveHeader(currentActiveTabOnMount);
+      }
+    }, []);
 
     return (
       <div ref={ref} className="p-6 flex items-center">

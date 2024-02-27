@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Container from "./@shared-components/Container";
 import Button from "./@shared-components/Button";
