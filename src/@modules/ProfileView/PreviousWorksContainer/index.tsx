@@ -4,7 +4,7 @@ import Avatar from "../../../@shared-components/Avatar";
 import Button from "../../../@shared-components/Button";
 
 const PreviousWorksContainer: FC = () => {
-  const { data, isError, isLoading } = useGetPreviousWorksPhotosQuery("");
+  const { data, isError, isLoading, refetch } = useGetPreviousWorksPhotosQuery("");
 
   return (
     <>
@@ -25,7 +25,7 @@ const PreviousWorksContainer: FC = () => {
           })}
 
         {isError && !data && !isLoading && (
-          <Button title="Refetch Previous Works" />
+          <Button title="Refetch Previous Works" onClick={refetch}/>
         )}
       </div>
     </>
