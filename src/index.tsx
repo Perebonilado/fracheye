@@ -10,18 +10,21 @@ import { reduxStore } from "./config/reduxToolKit/reduxConfig";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AppLoaderProvider from "./context/AppLoaderContext";
+import ErrorBoundary from "./@shared-components/ErrorBoundary";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider store={reduxStore}>
-      <AppLoaderProvider>
-        <App />
-        <ToastContainer />
-      </AppLoaderProvider>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={reduxStore}>
+        <AppLoaderProvider>
+          <App />
+          <ToastContainer />
+        </AppLoaderProvider>
+      </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
