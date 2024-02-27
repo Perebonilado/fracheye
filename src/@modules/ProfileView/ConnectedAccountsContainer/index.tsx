@@ -3,30 +3,17 @@ import Button from "../../../@shared-components/Button";
 import ChevronDown from "../../../@icons/ChevronDown";
 import ConnectedAccountCard from "../ConnectedAccountCard";
 
-const ConnectedAccountsContainer = forwardRef<HTMLDivElement>((_, ref) => {
-  const data = [
-    {
-      totalLifeTimeViewsCount: 10000,
-      likeCount: 10000,
-      followerCount: 10000,
-      username: "mahome",
-      socialMediaPlatform: "instagram",
-    },
-    {
-      totalLifeTimeViewsCount: 10000,
-      likeCount: 10000,
-      followerCount: 10000,
-      username: "mahome",
-      socialMediaPlatform: "instagram",
-    },
-    {
-      totalLifeTimeViewsCount: 10000,
-      likeCount: 10000,
-      followerCount: 10000,
-      username: "mahome",
-      socialMediaPlatform: "instagram",
-    },
-  ] as const;
+interface Props {
+  data: {
+    totalLifeTimeViewsCount: number;
+    likeCount: number;
+    followerCount: number;
+    username: string;
+    socialMediaPlatform: string;
+  }[];
+}
+
+const ConnectedAccountsContainer = forwardRef<HTMLDivElement, Props>(({data}, ref) => {
   return (
     <div ref={ref} className="mb-14">
       <div className="flex items-center gap-3">

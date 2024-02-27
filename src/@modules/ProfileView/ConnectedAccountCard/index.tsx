@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Card from "../../../@shared-components/Card";
-import { SocialMediaPlatformModel } from "../../../models/SocialMediaPlatform.model";
 import InstagramIcon from "../../../@icons/InstagramIcon";
 import ArrowRight from "../../../@icons/ArrowRight";
 import { formatNumberToShortForm } from "../../../utils";
@@ -10,7 +9,7 @@ interface Props {
   likeCount: number;
   followerCount: number;
   username: string;
-  socialMediaPlatform: SocialMediaPlatformModel;
+  socialMediaPlatform: string;
 }
 
 const ConnectedAccountCard: FC<Props> = ({
@@ -20,11 +19,11 @@ const ConnectedAccountCard: FC<Props> = ({
   username,
   socialMediaPlatform,
 }) => {
-  const socialMediaPlatformIcons = {
-    instagram: <InstagramIcon />,
-    twitter: <InstagramIcon />,
+  const socialMediaPlatformIcons: Record<string, React.ReactNode> = {
+    tiktok: <InstagramIcon />,
+    youtube: <InstagramIcon />,
     facebook: <InstagramIcon />,
-  } as const;
+  } 
 
   const stats = {
     "Total lifetime views": totalLifeTimeViewsCount,
