@@ -5,10 +5,21 @@ interface Props {
   headers: { isActive: boolean; title: string }[];
   handleGetActiveTabTitle?: (title: string) => void;
   currentActiveTabOnMount?: string;
+  variant?: "text" | "button";
+  fullWidth?: boolean;
 }
 
 const Tab = forwardRef<HTMLDivElement, Props>(
-  ({ headers, handleGetActiveTabTitle, currentActiveTabOnMount }, ref) => {
+  (
+    {
+      headers,
+      handleGetActiveTabTitle,
+      currentActiveTabOnMount,
+      variant = "text",
+      fullWidth = false,
+    },
+    ref
+  ) => {
     const [headersCopy, setHeadersCopy] = useState([...headers]);
 
     const handleChangeActiveHeader = (title: string) => {
@@ -37,6 +48,8 @@ const Tab = forwardRef<HTMLDivElement, Props>(
               {...header}
               key={key}
               handleClick={handleChangeActiveHeader}
+              variant={variant}
+              style={{ flex: fullWidth ? 1 : "" }}
             />
           );
         })}

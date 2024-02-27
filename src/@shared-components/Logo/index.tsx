@@ -18,7 +18,7 @@ const Logo: FC<Props> = ({ size = "small" }) => {
       <img
         className="absolute top-0 left-0 w-full h-full"
         style={{
-          objectFit: "cover",
+          objectFit: "contain",
           objectPosition: "50% 50%",
         }}
         src="/assets/francheye-logo.png"

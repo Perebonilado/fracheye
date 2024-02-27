@@ -5,6 +5,7 @@ import Button from "./@shared-components/Button";
 import Avatar from "./@shared-components/Avatar";
 import Tab from "./@shared-components/Tab";
 import Card from "./@shared-components/Card";
+import Logo from "./@shared-components/Logo";
 
 function App() {
   return (
@@ -33,8 +34,10 @@ function App() {
           { title: "Videos", isActive: false },
           { title: "Photos", isActive: true },
         ]}
+        variant="text"
       />
       <Card></Card>
+      <Logo size="medium"/>
     </Container>
   );
 }
