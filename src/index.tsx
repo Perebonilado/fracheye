@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { reduxStore } from "./config/reduxToolKit/reduxConfig";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AppLoaderProvider from "./context/AppLoaderContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,8 +17,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={reduxStore}>
-      <App />
-      <ToastContainer />
+      <AppLoaderProvider>
+        <App />
+        <ToastContainer />
+      </AppLoaderProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -55,7 +55,7 @@ const TabItem: FC<Props> = ({
           size="large"
           title={title}
           color={isActive ? "primary" : "secondary"}
-          className="rounded-none first:rounded-tl-lg first:rounded-bl-lg last:rounded-tr-lg last:rounded-br-lg font-medium"
+          className="!rounded-none first:!rounded-tl-lg first:!rounded-bl-lg last:!rounded-tr-lg last:!rounded-br-lg font-medium"
           onClick={() => {
             handleClick(title);
           }}

@@ -12,17 +12,20 @@ const baseQuery = fetchBaseQuery({
 export const previousWorkApi = createApi({
   reducerPath: "previousWorks",
   baseQuery,
+  tagTypes: ['previousWorks'],
   endpoints: (build) => ({
     getPreviousWorksPhotos: build.query<PreviousWorkModel, "">({
       query: () => ({
-        url: "/photos",
+        url: "/photos?_limit=20",
       }),
+      providesTags: ['previousWorks'],
       transformResponse: (res: PreviousWorkDto) => {
         if (!res.length) return [] as PreviousWorkModel;
         else {
           const mappedData: PreviousWorkModel = res.map((pw) => ({
             id: pw.id,
             imageSrc: pw.url,
+            description: pw.title,
           }));
 
           return mappedData;
