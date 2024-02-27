@@ -1,0 +1,35 @@
+.root {
+  @apply  flex items-center justify-center gap-4;
+}
+
+.contained {
+  @apply rounded-xl;
+}
+
+.text {
+    @apply bg-none border-none !p-0 text-[#00000080]
+}
+
+.contained.primary {
+  @apply bg-[#0014BC] text-white;
+}
+
+.contained.secondary {
+  @apply bg-[#FFFFFF] text-black;
+}
+
+.contained.tetiary {
+    @apply bg-black text-[#FFFFFF]
+}
+
+.small {
+  @apply text-sm px-2 py-1;
+}
+
+.medium {
+  @apply text-sm px-8 py-4;
+}
+
+.large {
+  @apply text-lg px-8 py-3;
+}
