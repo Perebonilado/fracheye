@@ -6,14 +6,12 @@ import GuaranteeCard from "../GuaranteeCard";
 import PreviousWorksContainer from "../PreviousWorksContainer";
 import ConnectedAccountsContainer from "../ConnectedAccountsContainer";
 import UserInfoContainer from "../UserInfoContainer";
-import data from "../../../json-data/user1.json";
+import data from "../../../json-data/user2.json";
 import Banner from "../Banner";
 import { UserInfoModel } from "../../../models/UserInfoModel.model";
 
 const ProfileView: FC = () => {
-  const [userInfoData, setUserInfoData] = useState(
-    data as unknown as UserInfoModel
-  );
+  const userInfoData = data as unknown as UserInfoModel;
   return (
     <Container>
       <section className="flex gap-8 my-32 max-md:flex-col">
