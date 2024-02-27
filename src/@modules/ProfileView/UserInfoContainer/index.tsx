@@ -35,7 +35,7 @@ const UserInfoContainer: FC<Props> = ({
   };
 
   return (
-    <section className="flex mb-10 max-md:flex-col gap-4">
+    <section className="flex mb-10 max-lg:flex-col gap-4">
       <div style={{ flex: 4 }} className="flex flex-col">
         <div className="flex items-center gap-2">
           <h2 className="text-2xl font-bold">{name}</h2>
@@ -55,19 +55,19 @@ const UserInfoContainer: FC<Props> = ({
           <p className="text-[13px] leading-relaxed">{bio}</p>
         </div>
       </div>
-      <div style={{ flex: 2 }} className="flex flex-col gap-5 items-end max-md:items-start">
+      <div style={{ flex: 2 }} className="flex flex-col gap-5 items-end max-lg:items-start">
         <Button title="Follow" size="small" className="w-fit" />
 
         {languages?.length ? (
           <div>
-            <h3 className="font-bold mb-2 text-right max-md:text-left">Languages</h3>
+            <h3 className="font-bold mb-2 text-right max-lg:text-left">Languages</h3>
             <p className="text-[#11111199]">{languages.join(", ")}</p>
           </div>
         ) : null}
 
         {contentType && (
           <div>
-            <h3 className="font-bold mb-2 text-right max-md:text-left">Content Type</h3>
+            <h3 className="font-bold mb-2 text-right max-lg:text-left">Content Type</h3>
             <p className="text-[#11111199] flex items-center gap-3">
               <SmileyFace /> {contentType}
             </p>
@@ -75,8 +75,8 @@ const UserInfoContainer: FC<Props> = ({
         )}
 
         <div>
-          <h3 className="font-bold mb-2 text-right max-md:text-left">Brands I've worked with</h3>
-          <div className="text-[#11111199] flex items-center justify-end gap-3 max-md:justify-start">
+          <h3 className="font-bold mb-2 text-right max-lg:text-left">Brands I've worked with</h3>
+          <div className="text-[#11111199] flex items-center justify-end gap-3 max-lg:justify-start">
             <NikeIcon />
             <NikeIcon />
             <NikeIcon />
